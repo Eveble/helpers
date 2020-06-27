@@ -5,7 +5,7 @@ import { NATIVE_ERROR_CLASSES } from '../constants/literal';
  * @param arg - Argument for evaluation.
  * @returns Returns true if argument is an error class, else false.
  */
-export const isErrorClass = function(arg: any): boolean {
+export const isErrorClass = function (arg: any): boolean {
   return (
     arg != null &&
     (NATIVE_ERROR_CLASSES.includes(arg) ||

@@ -20,7 +20,7 @@ describe('isErrorInstance', () => {
     expect(isErrorInstance(new MyClass())).to.be.false;
     expect(isErrorInstance({})).to.be.false;
     expect(isErrorInstance(1234)).to.be.false;
-    const fn: () => null = function(): null {
+    const fn: () => null = function (): null {
       return null;
     };
     expect(isErrorInstance(fn)).to.be.false;

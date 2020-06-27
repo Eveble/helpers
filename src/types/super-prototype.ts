@@ -6,6 +6,7 @@ import { superClass } from './super-class';
  * @returns Returns parent prototype if exists, else undefined.
  */
 export function superPrototype(child: any): Record<keyof any, any> | undefined {
+  // eslint-disable-next-line @typescript-eslint/ban-types
   const foundSuperClass: Function | undefined = superClass(child);
   return foundSuperClass != null ? foundSuperClass.prototype : undefined;
 }

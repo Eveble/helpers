@@ -21,7 +21,7 @@ describe('isClassInstance', () => {
     expect(isClassInstance({})).to.be.false;
     expect(isClassInstance(1234)).to.be.false;
     expect(isClassInstance('my-string')).to.be.false;
-    const fn: () => null = function(): null {
+    const fn: () => null = function (): null {
       return null;
     };
     expect(isClassInstance(fn)).to.be.false;
