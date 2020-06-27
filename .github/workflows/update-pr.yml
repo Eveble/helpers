@@ -26,10 +26,9 @@ jobs:
         with:
           path: ./.github/ISSUE_TEMPLATE/fix_template.md
       - name: Update Pull Request
-        uses: gr2m/create-or-update-pull-request-action@v1.x
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: gha-utilities/init-pull-request@v0.1.8
         with:
+          pull_request_token: ${{ secrets.GITHUB_TOKEN }}
           body: ${{ steps.pull_request_body.outputs.content }}
   format_default_pr_information:
     runs-on: ubuntu-latest
@@ -46,8 +45,7 @@ jobs:
         with:
           path: ./.github/ISSUE_TEMPLATE/pull_request_template.md
       - name: Update Pull Request
-        uses: gr2m/create-or-update-pull-request-action@v1.x
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: gha-utilities/init-pull-request@v0.1.8
         with:
+          pull_request_token: ${{ secrets.GITHUB_TOKEN }}
           body: ${{ steps.pull_request_body.outputs.content }}
