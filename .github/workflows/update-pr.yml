@@ -18,8 +18,13 @@ jobs:
     if: ${{ contains(github.event.pull_request.title, 'fix') }}
     needs: [assign_labels]
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
+      - name: Setup Node@14.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14.x'
+      - name: Install dependencies
+        uses: jaid/action-npm-install@v1.2.1
       - name: Read 'fix' body template
         id: pull_request_body
         uses: juliangruber/read-file-action@v1
@@ -37,8 +42,13 @@ jobs:
       github.actor != 'github-actions[bot]' && (! contains(github.event.pull_request.labels.*.name, 'bug') && ! contains(github.event.pull_request.labels.*.name, 'fix'))
     needs: [assign_labels]
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
+      - name: Setup Node@14.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14.x'
+      - name: Install dependencies
+        uses: jaid/action-npm-install@v1.2.1
       - name: Read 'default' body template
         id: pull_request_body
         uses: juliangruber/read-file-action@v1
