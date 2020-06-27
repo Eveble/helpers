@@ -27,7 +27,7 @@ jobs:
       - name: Update Pull Request
         uses: AsasInnab/pr-body-action@v1
         with:
-          pull_request_token: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           body: ${{ steps.pull_request_body.outputs.content }}
   format_default_pr_information:
     runs-on: ubuntu-latest
@@ -45,5 +45,5 @@ jobs:
       - name: Update Pull Request
         uses: AsasInnab/pr-body-action@v1
         with:
-          pull_request_token: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           body: ${{ steps.pull_request_body.outputs.content }}
