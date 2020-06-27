@@ -1,4 +1,4 @@
-name: "Update Pull Request"
+name: 'Update Pull Request'
 
 on:
   pull_request:
@@ -14,62 +14,40 @@ jobs:
           CONFIGURATION_PATH: .github/pr-labeler.yml # optional, .github/pr-labeler.yml is the default value
   format_fix_pr_information:
     runs-on: ubuntu-latest
-    name: Format fix pull request
+    name: Format fix Pull request
     if: ${{ contains(github.event.pull_request.title, 'fix') }}
     needs: [assign_labels]
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-    - name: Read 'fix' body template
-      id: pull_request_body
-      uses: juliangruber/read-file-action@v1
-      with:
-        path: ./.github/ISSUE_TEMPLATE/fix_template.md
-    - name: Update Pull Request
-      uses: tzkhan/pr-update-action@v1.1.1
-      with:
-        repo-token: "${{ secrets.GITHUB_TOKEN }}"
-        branch-regex: ${{ secrets.PROJECT_KEY_PATTERN }} # [a-zA-Z0-9_]{3}-[\d]+
-        lowercase-branch: true
-        title-template: '[%branch%]'
-        replace-title: false
-        title-prefix-space: true
-        uppercase-title: false
-        body-template: |
-          [Link to %branch%](${{ secrets.TICKET_URL }}%branch%)
-          ---
-          ${{ steps.pull_request_body.outputs.content }}
-        replace-body: false
-        body-prefix-newline-count: 2
-        uppercase-body: true
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Read 'fix' body template
+        id: pull_request_body
+        uses: juliangruber/read-file-action@v1
+        with:
+          path: ./.github/ISSUE_TEMPLATE/fix_template.md
+      - name: Update Pull Request
+        uses: gr2m/create-or-update-pull-request-action@v1.x
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          body: ${{ steps.pull_request_body.outputs.content }}
   format_default_pr_information:
     runs-on: ubuntu-latest
-    name: Format default pull request
+    name: Format default Pull request
     if: >
       github.actor != 'github-actions[bot]' && (! contains(github.event.pull_request.labels.*.name, 'bug') && ! contains(github.event.pull_request.labels.*.name, 'fix'))
     needs: [assign_labels]
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-    - name: Read 'default' body template
-      id: pull_request_body
-      uses: juliangruber/read-file-action@v1
-      with:
-        path: ./.github/ISSUE_TEMPLATE/pull_request_template.md
-    - name: Update Pull Request
-      uses: tzkhan/pr-update-action@v1.1.1
-      with:
-        repo-token: "${{ secrets.GITHUB_TOKEN }}"
-        branch-regex: ${{ secrets.PROJECT_KEY_PATTERN }} # [a-zA-Z0-9_]{3}-[\d]+
-        lowercase-branch: true
-        title-template: '[%branch%]'
-        replace-title: false
-        title-prefix-space: true
-        uppercase-title: false
-        body-template: |
-          [Link to %branch%](${{ secrets.TICKET_URL }}%branch%)
-          ---
-          ${{ steps.pull_request_body.outputs.content }}
-        replace-body: false
-        body-prefix-newline-count: 2
-        uppercase-body: true
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Read 'default' body template
+        id: pull_request_body
+        uses: juliangruber/read-file-action@v1
+        with:
+          path: ./.github/ISSUE_TEMPLATE/pull_request_template.md
+      - name: Update Pull Request
+        uses: gr2m/create-or-update-pull-request-action@v1.x
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          body: ${{ steps.pull_request_body.outputs.content }}

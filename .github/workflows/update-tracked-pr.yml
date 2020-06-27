@@ -1,0 +1,27 @@
+name: 'Update tracked Pull Request'
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  update_pr:
+    runs-on: ubuntu-latest
+    name: Format tracked Pull Request
+    steps:
+      - name: Update Pull Request
+        uses: tzkhan/pr-update-action@v1.1.1
+        with:
+          repo-token: '${{ secrets.GITHUB_TOKEN }}'
+          branch-regex: ${{ secrets.PROJECT_KEY_PATTERN }} # [a-zA-Z0-9_]{3}-[\d]+
+          lowercase-branch: true
+          title-template: '[%branch%]'
+          replace-title: false
+          title-prefix-space: true
+          uppercase-title: false
+          body-template: |
+            [Link to %branch%](${{ secrets.TICKET_URL }}%branch%)
+            ---
+          replace-body: false
+          body-prefix-newline-count: 2
+          uppercase-body: true
