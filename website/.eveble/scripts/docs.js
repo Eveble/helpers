@@ -246,7 +246,6 @@ module.exports = class ConfigGenerator {
    * Returns normalized paths to interfaces files for Docusaurus sidebar.
    * @returns {string[]} Array of paths as strings.
    */
-
   getInterfacesForSidebar() {
     return this.getPathsForSidebar(this.paths.interfaces);
   }
@@ -267,7 +266,11 @@ module.exports = class ConfigGenerator {
    * @return {string[]} List of files.
    */
   listFilesInDir(dir) {
-    return fs.readdirSync(dir);
+    try {
+      return fs.readdirSync(dir);
+    } catch (e) {
+      return [];
+    }
   }
 
   /**
