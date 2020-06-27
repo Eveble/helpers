@@ -3,8 +3,7 @@ import commonjs from 'rollup-plugin-commonjs';
 import filesize from 'rollup-plugin-filesize';
 import tsPlugin from 'rollup-plugin-typescript2';
 import json from 'rollup-plugin-json';
-import ttypescript from 'ttypescript';
-
+import typescript from 'typescript';
 import sourceMaps from 'rollup-plugin-sourcemaps';
 
 const env = process.env.NODE_ENV;
@@ -29,7 +28,7 @@ export default {
     commonjs(),
     filesize(),
     tsPlugin({
-      typescript: ttypescript,
+      typescript: typescript,
     }),
     sourceMaps(),
   ],
