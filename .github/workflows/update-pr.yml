@@ -19,19 +19,13 @@ jobs:
     needs: [assign_labels]
     steps:
       - uses: actions/checkout@v2
-      - name: Setup Node@14.x
-        uses: actions/setup-node@v1
-        with:
-          node-version: '14.x'
-      - name: Install dependencies
-        uses: jaid/action-npm-install@v1.2.1
       - name: Read 'fix' body template
         id: pull_request_body
         uses: juliangruber/read-file-action@v1
         with:
           path: ./.github/ISSUE_TEMPLATE/fix_template.md
       - name: Update Pull Request
-        uses: gha-utilities/init-pull-request@v0.1.8
+        uses: AsasInnab/pr-body-action@v1
         with:
           pull_request_token: ${{ secrets.GITHUB_TOKEN }}
           body: ${{ steps.pull_request_body.outputs.content }}
@@ -43,19 +37,13 @@ jobs:
     needs: [assign_labels]
     steps:
       - uses: actions/checkout@v2
-      - name: Setup Node@14.x
-        uses: actions/setup-node@v1
-        with:
-          node-version: '14.x'
-      - name: Install dependencies
-        uses: jaid/action-npm-install@v1.2.1
       - name: Read 'default' body template
         id: pull_request_body
         uses: juliangruber/read-file-action@v1
         with:
           path: ./.github/ISSUE_TEMPLATE/pull_request_template.md
       - name: Update Pull Request
-        uses: gha-utilities/init-pull-request@v0.1.8
+        uses: AsasInnab/pr-body-action@v1
         with:
           pull_request_token: ${{ secrets.GITHUB_TOKEN }}
           body: ${{ steps.pull_request_body.outputs.content }}
