@@ -23,7 +23,7 @@ jobs:
         id: pull_request_body
         uses: juliangruber/read-file-action@v1
         with:
-          path: ./.github/ISSUE_TEMPLATE/fix_template.md
+          path: ./.github/PULL_REQUEST_TEMPLATE/bug_fix.md
       - name: Update Pull Request
         uses: AsasInnab/pr-body-action@v1
         with:
@@ -41,7 +41,7 @@ jobs:
         id: pull_request_body
         uses: juliangruber/read-file-action@v1
         with:
-          path: ./.github/ISSUE_TEMPLATE/pull_request_template.md
+          path: ./.github/pull_request_template.md
       - name: Update Pull Request
         uses: AsasInnab/pr-body-action@v1
         with:
