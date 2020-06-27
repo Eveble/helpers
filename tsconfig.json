@@ -13,12 +13,6 @@
     "noUnusedLocals": true,
     "noUnusedParameters": false,
     "outDir": "./dist",
-    "plugins": [
-      {
-        "transform": "tsruntime/dist/transform/transformer.js",
-        "type": "program"
-      }
-    ],
     "preserveConstEnums": true,
     "removeComments": true,
     "sourceMap": true,
