@@ -5,7 +5,7 @@ on:
     types: [opened]
 
 jobs:
-  initialize:
+  format:
     name: Format tracked Pull Request
     runs-on: ubuntu-latest
     steps:
