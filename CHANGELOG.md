@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/eveble/helpers/compare/v1.0.0...v1.0.1) (2020-06-28)
+
+
+### Bug Fixes
+
+* **docs:** link learn the basics ([28ca03b](https://github.com/eveble/helpers/commit/28ca03b077edd14dbbaa64c25cf04ad9c64c46b1))
+
 # 1.0.0 (2020-06-27)
 
 
