@@ -52,7 +52,7 @@ export const QuickStart = () => {
             </Terminal>
             <SubTitle>
               {' '}
-              <a className="LinkBasics" href={'docs/guides/getting-started'}>
+              <a className="LinkBasics" href={siteConfig.themeConfig.navbar.links[0].to}>
                 Learn the basics
               </a>{' '}
               or dive deeper and take a{' '}
