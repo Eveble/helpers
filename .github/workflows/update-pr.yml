@@ -33,7 +33,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Format default Pull request
     if: >
-      github.actor != 'github-actions[bot]' && (! contains(github.event.pull_request.labels.*.name, 'bug') && ! contains(github.event.pull_request.labels.*.name, 'fix'))
+      github.actor != 'github-actions[bot]' && (! contains(github.event.pull_request.title, 'fix')) && (! contains(github.event.pull_request.labels.*.name, 'bug') && ! contains(github.event.pull_request.labels.*.name, 'fix'))
     needs: [assign_labels]
     steps:
       - uses: actions/checkout@v2
