@@ -1,6 +1,6 @@
 [@eveble/helpers][package-homepage]
 
-=========================
+---
 
 Helpers for Eveble framework
 
