@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/eveble/helpers/compare/v1.0.1...v1.0.2) (2020-07-02)
+
+
+### Bug Fixes
+
+* **docs:** building file paths on subdirectories ([8a49115](https://github.com/eveble/helpers/commit/8a491157c8c9cf80945f85600dc6b5d012be043f))
+
 ## [1.0.1](https://github.com/eveble/helpers/compare/v1.0.0...v1.0.1) (2020-06-28)
 
 
