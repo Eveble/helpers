@@ -268,9 +268,15 @@ ___
 
 ###  isMochaInWatchMode
 
-▸ **isMochaInWatchMode**(): *boolean*
+▸ **isMochaInWatchMode**(`nodeProcess`: Process): *boolean*
 
 Evaluates if Mocha is running in watch('--watch') mode.
+
+**Parameters:**
+
+Name | Type | Description |
+------ | ------ | ------ |
+`nodeProcess` | Process | Instance of `NodeJS.Process`. |
 
 **Returns:** *boolean*
 
