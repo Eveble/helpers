@@ -146,11 +146,5 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "packageManager": "yarn",
-  "reviewer": "desivi",
-  "isRemovable": true,
-  "isEvebleRequired": false,
-  "isTestingRequired": false,
-  "private": false
+  }
 }
