@@ -37,7 +37,7 @@ export const QuickStart = () => {
               Add library to dependencies in existing project:
             </SubTitle>
             <Terminal className="terminal">
-              <Code>npm install {siteConfig.title}</Code>
+              <Code>npm install {siteConfig.projectName}</Code>
             </Terminal>
             <SubTitle>
               {' '}
