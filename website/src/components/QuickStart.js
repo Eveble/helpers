@@ -34,23 +34,34 @@ export const QuickStart = () => {
           <Title className="package--description">Quick Start</Title>
           <Description>
             <SubTitle>
-              Add library to dependencies in existing project:
+              a) Add library to dependencies in existing project:
             </SubTitle>
             <Terminal className="terminal">
+              <Code>npm install {siteConfig.projectName}</Code>
+            </Terminal>
+            <SubTitle>
+              b) Use our boilerplate project to create a new one:
+            </SubTitle>
+            <Terminal className="terminal">
+              <Code>
+                git clone https://github.com/eveble/eveble-boilerplate
+              </Code>
+              <Code>cd eveble-boilerplate</Code>
+              <Code>npm install</Code>
               <Code>npm install {siteConfig.projectName}</Code>
             </Terminal>
             <SubTitle>
               {' '}
               <a
                 className="LinkBasics"
-                href={siteConfig.themeConfig.navbar.links[0].to}
+                href={siteConfig.themeConfig.navbar.items[0].to}
               >
                 Learn the basics
               </a>{' '}
               or dive deeper and take a{' '}
               <a
                 className="LinkBasics"
-                href={siteConfig.themeConfig.navbar.links[1].to}
+                href={siteConfig.themeConfig.navbar.items[1].to}
               >
                 look at the APIs.
               </a>
