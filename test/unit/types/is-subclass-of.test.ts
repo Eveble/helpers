@@ -18,9 +18,7 @@ describe(`isSubclassOf`, () => {
   context('with other types', () => {
     it(`returns false if argument is primitive type`, () => {
       expect(
-        isSubclassOf((): void => {
-          return undefined;
-        }, Parent),
+        isSubclassOf((): void => undefined, Parent),
         'expected function to not be subclass'
       ).to.be.false;
       expect(isSubclassOf('', Parent), 'expected string to not be subclass').to

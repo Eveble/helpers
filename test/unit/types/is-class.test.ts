@@ -21,9 +21,7 @@ describe(`isClass`, () => {
   context('with other types', () => {
     it(`returns false for native types instances`, () => {
       expect(
-        isClass((): void => {
-          return undefined;
-        }),
+        isClass((): void => undefined),
         'Expected function to not be class'
       ).to.be.false;
       expect(isClass(''), `Expected String('') to not be class`).to.be.false;

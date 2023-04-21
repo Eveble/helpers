@@ -21,10 +21,6 @@ describe('isMultidimensionalArray', () => {
     expect(isMultidimensionalArray(2)).to.be.false;
     expect(isMultidimensionalArray(/fail/)).to.be.false;
     expect(isMultidimensionalArray([1234])).to.be.false;
-    expect(
-      isMultidimensionalArray((): void => {
-        return undefined;
-      })
-    ).to.be.false;
+    expect(isMultidimensionalArray((): void => undefined)).to.be.false;
   });
 });

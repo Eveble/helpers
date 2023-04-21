@@ -135,11 +135,7 @@ describe(`getTypeName`, () => {
     });
 
     it(`returns constructor name for instance of Function`, () => {
-      expect(
-        getTypeName((): void => {
-          return undefined;
-        })
-      ).to.be.equal('Function');
+      expect(getTypeName((): void => undefined)).to.be.equal('Function');
     });
   });
 });

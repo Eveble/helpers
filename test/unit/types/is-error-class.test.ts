@@ -28,11 +28,7 @@ describe(`isErrorClass`, () => {
     expect(isErrorClass('abcd')).to.be.false;
     expect(isErrorClass(1234)).to.be.false;
     expect(isErrorClass(new Date())).to.be.false;
-    expect(
-      isErrorClass((): void => {
-        return undefined;
-      })
-    ).to.be.false;
+    expect(isErrorClass((): void => undefined)).to.be.false;
     expect(isErrorClass(/fail/)).to.be.false;
     expect(isErrorClass(new MyClass())).to.be.false;
     expect(isErrorClass(new Error())).to.be.false;

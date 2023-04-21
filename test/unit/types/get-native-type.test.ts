@@ -24,11 +24,7 @@ describe(`getNativeType`, () => {
     expect(getNativeType([1234])).to.be.equal(Array);
     expect(getNativeType(Symbol('key'))).to.be.equal(Symbol);
     expect(getNativeType(new Map([]))).to.be.equal(Map);
-    expect(
-      getNativeType((): void => {
-        return undefined;
-      })
-    ).to.be.equal(Function);
+    expect(getNativeType((): void => undefined)).to.be.equal(Function);
     expect(
       getNativeType({
         key: 'value',

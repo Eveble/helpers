@@ -36,11 +36,7 @@ describe(`isConstructor`, () => {
     expect(isConstructor('abcd')).to.be.false;
     expect(isConstructor(1234)).to.be.false;
     expect(isConstructor(new Date())).to.be.false;
-    expect(
-      isConstructor((): void => {
-        return undefined;
-      })
-    ).to.be.false;
+    expect(isConstructor((): void => undefined)).to.be.false;
     expect(isConstructor(/fail/)).to.be.false;
     expect(isConstructor(new Error())).to.be.false;
     expect(isConstructor(new EvalError())).to.be.false;

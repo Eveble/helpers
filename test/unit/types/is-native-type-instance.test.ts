@@ -12,11 +12,7 @@ describe(`isNativeTypeInstance`, () => {
     expect(isNativeTypeInstance(2)).to.be.true;
     expect(isNativeTypeInstance(/fail/)).to.be.true;
     expect(isNativeTypeInstance([1234])).to.be.true;
-    expect(
-      isNativeTypeInstance((): void => {
-        return undefined;
-      })
-    ).to.be.true;
+    expect(isNativeTypeInstance((): void => undefined)).to.be.true;
     expect(isNativeTypeInstance(Symbol('key'))).to.be.true;
     expect(isNativeTypeInstance(new Map([]))).to.be.true;
     expect(

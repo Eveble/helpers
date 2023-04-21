@@ -5,8 +5,6 @@
  */
 export function isMocha(context: any): boolean {
   return ['afterEach', 'after', 'beforeEach', 'before', 'describe', 'it'].every(
-    (fnName) => {
-      return context[fnName] instanceof Function;
-    }
+    (fnName) => context[fnName] instanceof Function
   );
 }

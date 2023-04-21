@@ -129,11 +129,7 @@ describe(`hasTypeName`, () => {
     });
 
     it(`returns false for instance of Function`, () => {
-      expect(
-        hasTypeName((): void => {
-          return undefined;
-        })
-      ).to.be.false;
+      expect(hasTypeName((): void => undefined)).to.be.false;
     });
   });
 });
