@@ -1,7 +1,5 @@
 'use strict';
 
-Object.defineProperty(exports, '__esModule', { value: true });
-
 require('reflect-metadata');
 
 const NATIVE_ERROR_CLASSES = [
@@ -40,9 +38,9 @@ const NATIVE_CONSTRUCTOR_NAMES = [
 
 var literal = /*#__PURE__*/Object.freeze({
   __proto__: null,
+  NATIVE_CONSTRUCTOR_NAMES: NATIVE_CONSTRUCTOR_NAMES,
   NATIVE_ERROR_CLASSES: NATIVE_ERROR_CLASSES,
-  NATIVE_TYPES: NATIVE_TYPES,
-  NATIVE_CONSTRUCTOR_NAMES: NATIVE_CONSTRUCTOR_NAMES
+  NATIVE_TYPES: NATIVE_TYPES
 });
 
 const TYPE_NAME_KEY = Symbol('eveble:typeName');
@@ -53,9 +51,7 @@ var metadataKeys = /*#__PURE__*/Object.freeze({
 });
 
 function isMocha(context) {
-    return ['afterEach', 'after', 'beforeEach', 'before', 'describe', 'it'].every((fnName) => {
-        return context[fnName] instanceof Function;
-    });
+    return ['afterEach', 'after', 'beforeEach', 'before', 'describe', 'it'].every((fnName) => context[fnName] instanceof Function);
 }
 
 function isMochaInWatchMode(nodeProcess) {

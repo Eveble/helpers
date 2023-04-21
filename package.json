@@ -1,6 +1,6 @@
 {
   "name": "@eveble/helpers",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Helpers for Eveble framework",
   "main": "dist/index.js",
   "module": "dist/index.es.js",

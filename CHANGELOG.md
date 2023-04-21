@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/eveble/helpers/compare/v1.0.3...v1.0.4) (2023-04-21)
+
+
+### Bug Fixes
+
+* **docs:** update docs build process ([04fe01a](https://github.com/eveble/helpers/commit/04fe01aed9d9e35ce8d036aecbf075748e1d4c48))
+
 ## [1.0.3](https://github.com/eveble/helpers/compare/v1.0.2...v1.0.3) (2020-07-02)
 
 
